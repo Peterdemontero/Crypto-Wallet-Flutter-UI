@@ -185,17 +185,36 @@ class _HistoryPageState extends State<HistoryPage> {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(25.0),
-              child: Text(
-                'Tokens',
-                style: TextStyle(
-                  color: Color(0xffffffff),
-                  fontFamily: 'Livvic',
-                  fontSize: 23,
-                  fontWeight: FontWeight.w600,
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Text(
+                    'Tokens',
+                    style: TextStyle(
+                      color: Color(0xffffffff),
+                      fontFamily: 'Livvic',
+                      fontSize: 23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
-              ),
+                Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40.0),
+                      child: Container(
+                        width: 300.0,
+                        height: 162,
+                        decoration: BoxDecoration(
+                          color: Color(0xff292452),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
