@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Color(0xfff221f3a),
       bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Color(0xfff221f3a),
+          backgroundColor: Color.fromARGB(255, 26, 21, 63),
           color: Color(0xff301B57),
           animationDuration: const Duration(milliseconds: 400),
           letIndexChange: (index) => true,
