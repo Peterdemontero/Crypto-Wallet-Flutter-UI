@@ -13,8 +13,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  // Current page selected Index
   int _selectedIndex = 0;
 
+  // List of pages for the bottomNav Bar
   final List<Widget> _pages = [
     HistoryPage(),
     CurrencyPage(),
@@ -22,6 +24,7 @@ class _HomePageState extends State<HomePage> {
     UserPage()
   ];
 
+  // This function take user input to change the page index
   void _bottomNav(int index) {
     setState(() {
       _selectedIndex = index;
@@ -56,6 +59,8 @@ class _HomePageState extends State<HomePage> {
               height: 40.0,
             ),
           ]),
+
+      // This fetch the pages from the list at selected Index
       body: _pages[_selectedIndex],
     );
   }
