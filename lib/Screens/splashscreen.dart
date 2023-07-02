@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   _navigatetohome() async {
-    await Future.delayed(const Duration(seconds: 7), () {});
+    await Future.delayed(const Duration(seconds: 5), () {});
     // ignore: use_build_context_synchronously
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: ((context) => const HomePage())));
@@ -28,8 +28,19 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: const Color(0xfff221f3a),
       body: Center(
-        child: Image.asset(
-          'lib/images/loading.gif',
+        child: Container(
+          width: 340.0,
+          height: 340,
+          decoration: ShapeDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                'lib/images/loading.gif',
+              ),
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25),
+            ),
+          ),
         ),
       ),
     );
