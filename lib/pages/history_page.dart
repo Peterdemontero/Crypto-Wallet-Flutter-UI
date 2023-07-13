@@ -2,15 +2,25 @@ import 'package:flutter/material.dart';
 
 import '../Widgets/action_buttons.dart';
 
-class HistoryPage extends StatelessWidget {
+class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
 
   @override
+  State<HistoryPage> createState() => _HistoryPageState();
+}
+
+class _HistoryPageState extends State<HistoryPage> {
+  late double height;
+  late double width;
+
+  @override
   Widget build(BuildContext context) {
+    height = MediaQuery.of(context).size.height;
+    width = MediaQuery.of(context).size.width;
     return Column(
       children: [
         SizedBox(
-          height: 50.0,
+          height: 30.0,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -37,7 +47,7 @@ class HistoryPage extends StatelessWidget {
         ),
 
         SizedBox(
-          height: 50.0,
+          height: 20.0,
         ),
 
         // Text 1
@@ -114,7 +124,7 @@ class HistoryPage extends StatelessWidget {
         ),
 
         SizedBox(
-          height: 50.0,
+          height: 40.0,
         ),
 
         Row(
@@ -146,6 +156,75 @@ class HistoryPage extends StatelessWidget {
             ActionButtons(
               actionText: 'Buy',
               imagePath: 'lib/images/attach-money.png',
+            ),
+          ],
+        ),
+
+        //SizedBox
+        SizedBox(
+          height: 40.0,
+        ),
+
+        Stack(
+          children: [
+            Expanded(
+              child: Column(
+                children: [
+                  Container(
+                    height: height * .33,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(30),
+                        topRight: Radius.circular(30),
+                      ),
+                      gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: <Color>[
+                          Color.fromARGB(255, 61, 51, 86).withAlpha(0),
+                          Color.fromARGB(115, 61, 72, 88),
+                          Color.fromARGB(31, 22, 29, 44),
+                        ],
+                      ),
+                      // image: DecorationImage(
+                      //   image: AssetImage('lib/images/texture.png'),
+                      //   fit: BoxFit.fill,
+                      // ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(25.0),
+                  child: Text(
+                    'Tokens',
+                    style: TextStyle(
+                      color: Color(0xffffffff),
+                      fontFamily: 'Livvic',
+                      fontSize: 23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                Stack(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 40.0),
+                      child: Container(
+                        width: 300.0,
+                        height: 162,
+                        decoration: BoxDecoration(
+                          color: Color(0xff292452),
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
             ),
           ],
         ),
