@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 import '../Widgets/action_buttons.dart';
@@ -175,11 +173,23 @@ class _HistoryPageState extends State<HistoryPage> {
                   Container(
                     height: height * .33,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 26, 21, 63),
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(30),
                         topRight: Radius.circular(30),
                       ),
+                      gradient: LinearGradient(
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                        colors: <Color>[
+                          Color.fromARGB(255, 61, 51, 86).withAlpha(0),
+                          Color.fromARGB(115, 61, 72, 88),
+                          Color.fromARGB(31, 22, 29, 44),
+                        ],
+                      ),
+                      // image: DecorationImage(
+                      //   image: AssetImage('lib/images/texture.png'),
+                      //   fit: BoxFit.fill,
+                      // ),
                     ),
                   ),
                 ],

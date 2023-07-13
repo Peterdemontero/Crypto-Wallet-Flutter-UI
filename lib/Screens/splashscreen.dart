@@ -1,6 +1,5 @@
+import 'package:crypto_wallet/Screens/login.dart';
 import 'package:flutter/material.dart';
-
-import '../homepage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -20,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(seconds: 5), () {});
     // ignore: use_build_context_synchronously
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: ((context) => const HomePage())));
+        context, MaterialPageRoute(builder: ((context) => LoginPage())));
   }
 
   @override
